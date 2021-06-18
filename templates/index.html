@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Pokedex versão_Aluno</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="bloco">
+        <img src="/static/logo-blue.gif" width="200" alt="gif da Blue">
+    </div>
+    <div class="bloco">
+        <h1 id="pokemon_selecionado">Nenhum pokemon selecionado</h1></div>
+    <div class="lista_pokemons">
+        {% for pokemon in pokemons %}
+        <!--nessa dive tem o detalhe data-nome que significa que o data é a funçao que se usa pra buscar a referencia que esta no python nesse caso nome.-->
+        <div class="card_pokemon" data-nome="{{pokemon.nome}}"><!--nesse placehold esta especificado o pokemon que faz referencia ao que o for ta pedindo e o nome é o que esta no dicionario do app.py-->
+            <div class="imagem_pokemon">
+                <img src="{{caminho_base_imagem}}/{{pokemon.numero}}.png" alt="">
+            </div>
+            <div class="nome_pokemon">
+                <b>{{pokemon.nome}}</b>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script type="text/javascript" src="/static/index.js"></script>
+</body>
+</html>
